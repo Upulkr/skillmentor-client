@@ -20,7 +20,7 @@ const mentorSchema = z.object({
     .url("Must be a valid URL")
     .optional()
     .or(z.literal("")),
-  isCertified: z.boolean().default(false),
+  isCertified: z.boolean(),
   startYear: z.coerce.number().min(1900).max(new Date().getFullYear()),
 });
 
@@ -36,8 +36,16 @@ export function CreateMentor() {
     formState: { errors },
     watch,
   } = useForm<MentorFormValues>({
-    resolver: zodResolver(mentorSchema),
+    resolver: zodResolver(mentorSchema) as any,
     defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      title: "",
+      profession: "",
+      company: "",
+      bio: "",
+      experienceYears: 0,
       isCertified: false,
       startYear: new Date().getFullYear(),
     },
@@ -165,7 +173,7 @@ export function CreateMentor() {
                   Years of Experience
                 </label>
                 <input
-                  {...register("experienceYears")}
+                  {...register("experienceYears", { valueAsNumber: true })}
                   type="number"
                   className={`w-full px-4 py-2.5 rounded-xl border ${errors.experienceYears ? "border-red-500" : "border-slate-200"} focus:ring-2 focus:ring-indigo-500 outline-none transition-all`}
                 />
@@ -175,7 +183,7 @@ export function CreateMentor() {
                   Start Year
                 </label>
                 <input
-                  {...register("startYear")}
+                  {...register("startYear", { valueAsNumber: true })}
                   type="number"
                   className={`w-full px-4 py-2.5 rounded-xl border ${errors.startYear ? "border-red-500" : "border-slate-200"} focus:ring-2 focus:ring-indigo-500 outline-none transition-all`}
                 />

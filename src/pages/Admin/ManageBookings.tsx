@@ -8,14 +8,7 @@ import {
   TableCell,
 } from "../../components/ui/Table";
 import { Badge } from "../../components/ui/Badge";
-import {
-  Search,
-  Filter,
-  CheckCircle,
-  Clock,
-  Video,
-  Loader2,
-} from "lucide-react";
+import { Search, CheckCircle, Clock, Video, Loader2 } from "lucide-react";
 import { useState } from "react";
 
 export function ManageBookings() {
