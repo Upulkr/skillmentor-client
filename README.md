@@ -62,3 +62,20 @@ A premium, modern React frontend for the SkillMentor platform. Built with a focu
 - `src/pages`: Main view components (Dashboard, MentorProfile, Payment, etc.)
 - `src/store`: Zustand store for authentication and global state.
 - `src/api`: Axios configuration and interceptors.
+
+## 🚀 Deployment (AWS Amplify)
+
+The client is currently deployed on **AWS Amplify**.
+
+### Steps to Re-deploy:
+
+1. Push your latest code to the `main` branch of your GitHub repository.
+2. AWS Amplify will automatically detect the changes and start a new build.
+3. Once the build is "Ready", your site is updated!
+
+### Environment Variables on Amplify:
+
+Make sure these are set in the Amplify Console under **App Settings > Environment variables**:
+
+- `VITE_CLERK_PUBLISHABLE_KEY`: Your Clerk API key.
+- `VITE_API_URL`: `https://8hihksqggd.execute-api.ap-south-1.amazonaws.com/api/v1` (The AWS API Gateway URL).
