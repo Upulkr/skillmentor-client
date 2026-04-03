@@ -1,4 +1,4 @@
-# SkillMentor Client 🎓
+# SkillMentor Client -https://main.dhx95f54st444.amplifyapp.com/ 🎓
 
 A premium, modern React frontend for the SkillMentor platform. Built with a focus on speed, aesthetics, and a seamless user experience for students and mentors.
 
